@@ -66,11 +66,7 @@ app.get('/:id', (req, res) => {
     axios(config)
         .then(function (response) {
 
-            res.status(200).json({
-                success: true,
-                code: 200,
-                result: response.data
-            })
+            res.status(200).json(response.data)
         })
         .catch(function (error) {
             console.log(error);
