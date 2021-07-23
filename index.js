@@ -52,10 +52,10 @@ app.use(logger(configlog, {
 }))
 
 
-app.get('/', (req, res) => {
+app.get('/:id', (req, res) => {
     let config = {
         method: 'post',
-        url: 'https://api.krupreecha.com/16022564',
+        url: 'https://api.krupreecha.com/'+req.params.id,
         headers: {
             'Content-Type': 'application/json',
             'x-api-key': '8bebfb75a931bd796d5678a93f8064bc',
@@ -75,6 +75,7 @@ app.get('/', (req, res) => {
             console.log(error);
         });
 })
+
 
 
 
