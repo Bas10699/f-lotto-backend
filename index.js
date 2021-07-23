@@ -6,8 +6,6 @@ var data = qs.stringify({
 });
 
 
-
-
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
@@ -23,7 +21,6 @@ var mm = moment()
 var date = mm.utc(7).format('DD-MM-YYYY')
 var time = mm.utc(7).format('HH: mm: ss')
 console.log(date, time)
-
 
 
 app.use(bodyParser.urlencoded({
@@ -68,7 +65,7 @@ app.get('/', (req, res) => {
 
     axios(config)
         .then(function (response) {
-            
+
             res.status(200).json({
                 success: true,
                 result: response.data
@@ -77,7 +74,6 @@ app.get('/', (req, res) => {
         .catch(function (error) {
             console.log(error);
         });
-    // res.send('Hello World')
 })
 
 
