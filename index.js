@@ -72,6 +72,26 @@ app.get('/:id', (req, res) => {
             console.log(error);
         });
 })
+app.post('/verify', (req, res) => {
+    let config = {
+        method: 'post',
+        url: 'https://api.krupreecha.com/' + req.body.date + "/" + req.body.lotto,
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': '8bebfb75a931bd796d5678a93f8064bc',
+        },
+        data: data
+    };
+
+    axios(config)
+        .then(function (response) {
+            res.status(200).json(response.data)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+})
+
 
 
 
