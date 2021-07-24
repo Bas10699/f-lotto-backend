@@ -75,7 +75,7 @@ app.get('/:id', (req, res) => {
 app.post('/verify', (req, res) => {
     let config = {
         method: 'post',
-        url: 'https://api.krupreecha.com/' + req.body.date + "/" + req.body.lotto,
+        url: 'https://api.krupreecha.com/verify/' + req.body.date + "/" + req.body.lotto,
         headers: {
             'Content-Type': 'application/json',
             'x-api-key': '8bebfb75a931bd796d5678a93f8064bc',
